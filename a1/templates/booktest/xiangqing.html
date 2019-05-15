@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情页</title>
+</head>
+<body>
+    <h2>这是详情页</h2>
+    <br>
+
+    {% if bb %}
+
+    <ul>
+        <h3>{{ bb }}</h3>
+        {% for i in bb.bbb_set.all %}
+        <li>{{ i }}</li>
+        {% empty %}
+        没有bb
+        {% endfor %}
+    </ul>
+    {% else %}
+    没有aa
+    {% endif %}
+
+
+    <a href="/a1/list/">返回列表</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表页</title>
+</head>
+<body>
+    <h2>这是列表页</h2>
+    <br>
+    {% if aa %}
+        <ul>
+            {% for i in aa %}
+            <li><a href="/a1/xq/{{ i.id }}">{{ i.title }}</a></li>
+            {% empty %}
+            没有书籍
+            {% endfor %}
+        </ul>
+    {% else %}
+    没有书籍
+    {% endif %}
+    <a href="/a1/index/">去首页</a>
+</body>
+</html>
