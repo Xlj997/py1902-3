@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>列表页</title>
+    <link rel="stylesheet" href="/static/css/aaa.css">
+
 </head>
 <body>
-    <h2>这是列表页</h2>
-    <br>
-    {% if aa %}
-        <ul>
-            {% for i in aa %}
-            <li><a href="/a1/xq/{{ i.id }}">{{ i.title }}</a></li>
-            {% empty %}
-            没有书籍
-            {% endfor %}
-        </ul>
-    {% else %}
-    没有书籍
-    {% endif %}
-    <a href="/a1/index/">去首页</a>
+   <div id="id">
+        <h2>这是列表页</h2>
+        <br>
+        {% if aa %}
+            <ul>
+                {% for i in aa %}
+               {#  <li><a href="/a1/xq/{{ i.id }}">{{ i.title }}</a></li> #}
+                <li><a href="{% url 'booktest:xq' i.id %}">{{ i.title }}</a>
+                    <a href="{% url 'booktest:deletebook' i.id %}">删除</a>
+                </li>
+                {% empty %}
+                没有书籍
+                {% endfor %}
+            </ul>
+        {% else %}
+        没有书籍
+        {% endif %}
+        <a href="{% url 'booktest:index' %}">去首页</a>
+   </div>
 </body>
 </html>
