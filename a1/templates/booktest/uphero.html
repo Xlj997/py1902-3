@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更改英雄属性</title>
+</head>
+<body>
+
+
+    <div class="container">
+        {{ bb }}
+        <form action="#" method="post">
+
+            英雄名字:<input type="text" name="heroname" value="{{ bb.name }}">
+            <br>
+
+            性别:<input type="text" name="gender" value="{{ cc }}">
+            <br>
+
+
+
+            绝招:<input type="text" name="skill" value="{{ bb.skill }}">
+            <br>
+            书的名字:<input type="text" name="book" value="{{ bb.boot_id }}">
+            <br>
+            <input type="submit" name="提交">
+
+
+
+        </form>
+
+
+
+    </div>
+
+
+
+
+</body>
+</html>

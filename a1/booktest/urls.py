@@ -19,6 +19,7 @@ urlpatterns = [
 
     url(r'^deletehero/(\d+)/$',views.deletehero,name='deletehero'),
     url(r'^addhero/(\d+)/$',views.addhero,name='addhero'),
+    url(r'^uphero/(\d+)/$',views.uphero,name='uphero'),
 
 ]
 

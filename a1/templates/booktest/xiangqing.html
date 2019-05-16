@@ -19,6 +19,7 @@
             <li>{{ i }}
             <a href="{% url 'booktest:deletehero' i.id %}">删除</a>
             <a href="{% url 'booktest:addhero' i.id %}">添加英雄</a>
+            <a href="{% url 'booktest:uphero' i.id %}">更改英雄属性</a>
             </li>
             {% empty %}
             没有bb

@@ -99,13 +99,54 @@ def upbook(request):
     else:
         try:
             aa = aaa.objects.get(title=request.POST['name'])
+
             aa.title = request.POST['xname']
             aa.save()
             return HttpResponseRedirect('/a1/list')
         except Exception as e:
             return HttpResponse('没有这本书')
 
+def uphero(request,id):
+    if request.method =='GET':
 
+        bb = bbb.objects.get(pk=id)
+
+        if bb.gender=='wan':
+            cc = '男'
+        else:
+            cc = '女'
+
+
+        return render(request, 'booktest/uphero.html', {'bb': bb,'cc':cc})
+    elif request.method =='POST':
+
+        bb = bbb.objects.get(pk=id)
+        dd = bb.boot_id.id
+        try:
+
+            aa = aaa.objects.get(title=request.POST['book'])
+
+            bb.boot_id = aa
+
+        except Exception as e:
+            pass
+
+        bb.name = request.POST['heroname']
+
+        if request.POST['gender'] != bb.gender:
+
+            if request.POST['gender'] == '男':
+                bb.gender = 'wan'
+            elif request.POST['gender'] == '女':
+                bb.gender = 'women'
+            else:
+                pass
+
+        bb.skill = request.POST['skill']
+
+        bb.save()
+
+        return HttpResponseRedirect('/a1/xq/%s'%(dd))
 
 
 
