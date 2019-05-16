@@ -77,9 +77,20 @@ def addhero(request,id):
         hero.skill = request.POST['skill']
         hero.boot_id = bbbb.boot_id
         hero.save()
-        return HttpResponseRedirect('/a1/addhero/%s'%(id))
+        return HttpResponseRedirect('/a1/xq/%s'%(bbbb.boot_id.id))
 
 
+def addbook(request):
+    if request.method == 'GET':
+        aa = aaa.objects.all()
+        return render(request, 'booktest/addbook.html')
+
+    elif request.method == 'POST':
+        book = aaa()
+        book.title = request.POST['bookname']
+        book.pub_date = request.POST['time']
+        book.save()
+        return HttpResponseRedirect('/a1/list/')
 
 
 

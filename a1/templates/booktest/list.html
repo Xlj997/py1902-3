@@ -17,13 +17,16 @@
                 <li><a href="{% url 'booktest:xq' i.id %}">{{ i.title }}</a>
                     <a href="{% url 'booktest:deletebook' i.id %}">删除</a>
                 </li>
+
                 {% empty %}
                 没有书籍
                 {% endfor %}
+                <a href="{% url 'booktest:addbook' %}">添加书籍</a>
             </ul>
         {% else %}
         没有书籍
         {% endif %}
+
         <a href="{% url 'booktest:index' %}">去首页</a>
    </div>
 </body>
