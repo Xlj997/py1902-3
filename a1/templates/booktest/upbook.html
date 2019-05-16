@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍更改</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <form action="{% url 'booktest:upbook' %}" method="post">
+
+            请输入书名:<input type="text" name="name">
+            <br>
+            请输入要更改的东西<input type="text" name="xname">
+            <br>
+            <input type="submit" name="提交">
+
+
+
+        </form>
+
+
+
+
+    </div>
+
+
+
+</body>
+</html>

@@ -93,6 +93,19 @@ def addbook(request):
         return HttpResponseRedirect('/a1/list/')
 
 
+def upbook(request):
+    if request.method =='GET':
+        return render(request,'booktest/upbook.html')
+    else:
+        try:
+            aa = aaa.objects.get(title=request.POST['name'])
+            aa.title = request.POST['xname']
+            aa.save()
+            return HttpResponseRedirect('/a1/list')
+        except Exception as e:
+            return HttpResponse('没有这本书')
+
+
 
 
 
