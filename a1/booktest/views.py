@@ -63,6 +63,24 @@ def deletehero(request,id):
     return HttpResponseRedirect('/a1/xq/%s/'%(cc,))
 
 
+def addhero(request,id):
+    if request.method =='GET':
+        bb = bbb.objects.get(pk=id)
+        bb1 = bb.boot_id
+        return render(request, 'booktest/addhero.html', {'book': bb1, 'bookid': id})
+    elif request.method =='POST':
+        bbbb = bbb.objects.get(pk=id)
+        print(id)
+        hero = bbb()
+        hero.name = request.POST['username']
+        hero.gender = request.POST['sex']
+        hero.skill = request.POST['skill']
+        hero.boot_id = bbbb.boot_id
+        hero.save()
+        return HttpResponseRedirect('/a1/addhero/%s'%(id))
+
+
+
 
 
 

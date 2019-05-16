@@ -18,6 +18,7 @@
             {% for i in bb.bbb_set.all %}
             <li>{{ i }}
             <a href="{% url 'booktest:deletehero' i.id %}">删除</a>
+            <a href="{% url 'booktest:addhero' i.id %}">添加英雄</a>
             </li>
             {% empty %}
             没有bb
